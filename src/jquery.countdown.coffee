@@ -10,15 +10,15 @@ $.fn.countdown = (options) ->
     onFinish: ->
     displayTick: (element, d, h, m, s) ->
       intervals =
-        'Days': d
-        'Hours': h
-        'Minutes': m
-        'Seconds': s
+        'days': d
+        'hours': h
+        'minutes': m
+        'seconds': s
 
       html = ''
       $.each intervals, (k, v) ->
-        html += "<span class='countdown#{k}'>#{('0' + v).slice(-2)}</span>"
-        html += "<span class='countdown#{k}Divider'>:</span>" if k != 'Seconds'
+        html += "<span class='countdown-#{k}'>#{('0' + v).slice(-2)}</span>"
+        html += "<span class='countdown-#{k}-divider'>:</span>" if k != 'seconds'
       html = "<span class='countdown'>#{html}</span>"
 
       element.html html
