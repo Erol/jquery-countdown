@@ -18,16 +18,16 @@
       displayTick: function(element, d, h, m, s) {
         var html, intervals;
         intervals = {
-          'Days': d,
-          'Hours': h,
-          'Minutes': m,
-          'Seconds': s
+          'days': d,
+          'hours': h,
+          'minutes': m,
+          'seconds': s
         };
         html = '';
         $.each(intervals, function(k, v) {
-          html += "<span class='countdown" + k + "'>" + (('0' + v).slice(-2)) + "</span>";
-          if (k !== 'Seconds') {
-            return html += "<span class='countdown" + k + "Divider'>:</span>";
+          html += "<span class='countdown-" + k + "'>" + (('0' + v).slice(-2)) + "</span>";
+          if (k !== 'seconds') {
+            return html += "<span class='countdown-" + k + "-divider'>:</span>";
           }
         });
         html = "<span class='countdown'>" + html + "</span>";
